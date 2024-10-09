@@ -28,7 +28,6 @@
 
   <div>
     <%= form.label :major, style: "display: block" %>
-    <%= form.text_field :major %>
     <%= form.select :major, options_for_select(Student::VALID_MAJORS), {prompt: "Select a Major"}, class:"form-control" %>
   </div>
 
@@ -42,7 +41,7 @@
     <%= form.date_field :graduation_date %>
   </div>
   <div>
-    <%= form.label :profile_picture %>
+    <%= form.label :profile_picture, style: "display: block" %>
     <%= form.file_field :profile_picture %>
   </div>
   <div>

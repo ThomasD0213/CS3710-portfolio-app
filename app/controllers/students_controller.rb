@@ -9,6 +9,12 @@ class StudentsController < ApplicationController
     if @search_params[:major].present?
       @students = @students.where(major: @search_params[:major])
     end
+    if @search_params[:graduation_date_start].present? 
+     @students = @students.where("graduation_date >= ?", @search_params[:graduation_date_start].to_date) 
+    end
+    if @search_params[:graduation_date_end].present? 
+     @students = @students.where("graduation_date <= ?", @search_params[:graduation_date_end].to_date) 
+    end
   end
 
   # GET /students/1 or /students/1.json
